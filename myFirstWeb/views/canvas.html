@@ -1,0 +1,162 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
+    <meta charset="UTF-8">
+	<title>canvas</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<style type="text/css">
+		img{
+			width: 100%;
+			height: auto;
+			margin-bottom: 30px;
+		}
+		.canvas{
+			display:block;
+			/*border:2px solid #666;*/
+			/*margin:30px auto;*/
+			position: fixed;
+			bottom: 3%;
+			right: 1%;
+			/*border: 1px solid #000;*/
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<!-- <img src="img/1.jpg" id="imgC"> -->
+	<canvas id="myCanvas" class="canvas">该浏览器不支持canvas</canvas>
+	
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			var can = document.getElementById("myCanvas");
+			/*can.width = 600;
+			can.height = 600;*/
+			can.width = 50;
+			can.height = 50;
+
+			if(can.getContext("2d")){
+				var ctx = can.getContext("2d");
+
+				ctx.beginPath();
+				ctx.moveTo(0,25);
+				ctx.lineTo(50,25);
+				ctx.lineTo(25,0);
+				ctx.closePath();
+				ctx.fillStyle = "#000";
+				ctx.fill();
+
+				ctx.beginPath();
+				ctx.moveTo(12.5,25);
+				ctx.lineTo(37.5,25);
+				ctx.lineTo(37.5,50);
+				ctx.lineTo(12.5,50);
+				ctx.closePath();
+				ctx.fillStyle = "#000";
+				ctx.fill();
+
+				ctx.beginPath();
+				ctx.moveTo(37.5,0);
+				ctx.lineTo(42.5,0);
+				ctx.lineTo(42.5,25);
+				ctx.lineTo(37.5,25);
+				ctx.closePath();
+				ctx.fillStyle = "#000";
+				ctx.fill();
+
+				/*ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.lineTo(600,0);
+				ctx.lineTo(300,300);
+				ctx.lineTo(0,0);
+				ctx.closePath();
+				ctx.fillStyle = "#000";
+				ctx.fill();
+
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.lineTo(0,600);
+				ctx.lineTo(300,300);
+				ctx.lineTo(0,0);
+				ctx.closePath();
+				ctx.fillStyle = "red";
+				ctx.fill();
+
+				ctx.beginPath();
+				ctx.moveTo(0,600);
+				ctx.lineTo(300,300);
+				ctx.lineTo(600,600);
+				ctx.lineTo(0,600);
+				ctx.closePath();
+				ctx.fillStyle = "#000";
+				ctx.fill();
+
+				ctx.beginPath();
+				ctx.moveTo(600,600);
+				ctx.lineTo(300,300);
+				ctx.lineTo(600,0);
+				ctx.lineTo(600,600);
+				ctx.closePath();
+				ctx.fillStyle = "red";
+				ctx.fill();*/
+
+				/*var timer,i=0;
+
+				timer = setInterval(function(){
+					if(i*Math.PI/10 == 2.1*Math.PI){
+						i = 0;
+					}
+					ctx.beginPath();
+					ctx.arc(300,300,100,0,i*Math.PI/10);
+					ctx.fillStyle = "red";
+					ctx.stroke();
+					i++;
+				},1000);*/
+
+			}else{
+				alert("该浏览器不支持Canvas，请更换chrome浏览器查看");
+			}
+
+			
+			// ctx.fillStyle = "#ff00000";
+			// ctx.fillRect(0,0,200,100);
+
+			/*ctx.moveTo(0,0);
+			ctx.lineTo(300,300);
+			ctx.stroke();*/
+
+			/*ctx.moveTo(0,300);
+			ctx.lineTo(300,0);
+			ctx.stroke();*/
+
+			/*ctx.arc(150,150,150,0,2*Math.PI);
+			ctx.stroke();*/
+
+			/*ctx.font = "30px Microsoft YaHei";
+			ctx.strokeText("Hello Zin'L",85,120);*/
+
+			/*var grd = ctx.createLinearGradient(0,0,300,0);
+			grd.addColorStop(0,"red");
+			grd.addColorStop(1,"blue");
+			ctx.fillStyle = grd;
+			ctx.fillRect(0,0,300,300);*/
+
+			/*var grd = ctx.createLinearGradient(150,150,5,150,150,100);
+			grd.addColorStop(0,"red");
+			grd.addColorStop(1,"blue");
+			ctx.fillStyle = grd;
+			ctx.fillRect(0,0,300,300);*/
+
+			// var img = "<img src='../public/img/1.jpg'";
+			// var img = document.getElementById("imgC");
+			/*var img = new Image();
+			img.src = "img/1.jpg";
+			ctx.drawImage(img,0,0);*/
+		}
+
+		$("#myCanvas").on("touchstart",function(){
+			alert("这是canvas画出来的按钮");
+		});
+	</script>
+</body>
+</html>

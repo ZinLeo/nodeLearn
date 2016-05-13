@@ -1,0 +1,81 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
+    <meta charset="UTF-8">
+	<title>node加载html</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<style type="text/css">
+		.formBox{
+			width: 30%;
+			height: auto;
+			margin: 10% auto 0 auto;
+			overflow: hidden;
+		}
+		.formBox h1{
+			width: 100%;
+			height: 40px;
+			margin: 10px 0 20px 0;
+			font-size: 2rem;
+			line-height: 40px;
+			text-align: center;
+		}
+		.formBox input{
+			width: 60%;
+			height: 30px;
+			float: right;
+			margin-bottom: 15px;
+		}
+		.formBox label{
+			display: block;
+			float: left;
+			width: 25%;
+			height: 30px;
+			font-size: 1.4rem;
+			line-height: 30px;
+			margin-bottom: 15px;
+		}
+		.formBox a{
+			display: block;
+			float: left;
+			width: 100%;
+			height: 40px;
+			font-size: 1.6rem;
+			color: #fff;
+			line-height: 40px;
+			text-align: center;
+			background: rgba(0,0,0,.7);
+			border-radius: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="formBox">
+		<h1>login</h1>
+		<form method="post" action="/login" id="loginForm">
+			<label>username:</label><input type="text" name="userName" id="username">
+			<label>password:</label><input type="password" name="password" id="password">
+			<!-- <input type="button" id="submit" value="submit"> -->
+			<a href="javascript:;" id="btn">submit</a>
+		</form>
+	</div>
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var username = $("#username"),
+				password = $("#password"),
+				submit = $("#btn"),
+				form = $("#loginForm");
+
+			submit.on("click",function(){
+				if(username.val() != "" && username.val().length != 0 && password.val() != "" && password.val().length != 0){
+					form.submit();
+				}else{
+					alert("用户名或密码不能为空");
+				}
+				// alert("aa");
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
+    <meta charset="UTF-8">
+	<title>canvas</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<style type="text/css">
+		img{
+			width: 100%;
+			height: auto;
+			margin-bottom: 30px;
+		}
+		.canvas{
+			display:block;
+			/*border:2px solid #666;*/
+			/*margin:30px auto;*/
+			/*position: fixed;
+			bottom: 3%;
+			right: 1%;*/
+			/*border: 1px solid #000;*/
+			/*cursor: pointer;*/
+		}
+	</style>
+</head>
+<body>
+	<!-- <img src="img/1.jpg" id="imgC"> -->
+	<canvas id="myCanvas" class="canvas">该浏览器不支持canvas</canvas>
+	
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			var can = document.getElementById("myCanvas");
+			can.width = 7000;
+			can.height = 700;
+
+			if(can.getContext("2d")){
+				var ctx = can.getContext("2d");
+
+				ctx.beginPath();
+				ctx.lineTo(50,100);
+				ctx.lineTo(150,100);
+				ctx.lineTo(150,400);
+				ctx.lineTo(50,400);
+				ctx.fillStyle = "red";
+				ctx.closePath();
+				ctx.fill();
+
+				ctx.beginPath();
+				ctx.lineTo(200,100);
+				ctx.lineTo(300,100);
+				ctx.lineTo(300,300);
+				ctx.lineTo(400,300);
+				ctx.lineTo(400,400);
+				ctx.lineTo(200,400);
+				ctx.fillStyle = "blue";
+				ctx.closePath();
+				ctx.fill();
+
+				ctx.beginPath();
+				ctx.lineTo(450,200);
+				ctx.lineTo(550,200);
+				ctx.lineTo(550,100);
+				ctx.lineTo(650,100);
+				ctx.lineTo(650,200);
+				ctx.lineTo(750,200);
+				ctx.lineTo(750,300);
+				ctx.lineTo(450,300);
+				ctx.fillStyle = "green";
+				ctx.closePath();
+				ctx.fill();
+				
+
+			}else{
+				alert("该浏览器不支持Canvas，请更换chrome浏览器查看");
+			}
+
+			
+			
+		}
+
+		
+	</script>
+</body>
+</html>
